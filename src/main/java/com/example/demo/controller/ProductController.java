@@ -37,7 +37,7 @@ public class ProductController {
 		System.out.print(prod.getPname());
 		prodService.updateProd(prod);
 	}
-	
+	//delete not working !
 	@DeleteMapping("/{ref}")
 	public void deleteProd(@PathVariable String ref) {
 		prodService.deleteProd(ref);
