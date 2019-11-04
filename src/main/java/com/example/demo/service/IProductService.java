@@ -8,6 +8,6 @@ public interface IProductService {
 		List<Product> getProducts();
 		void addProd(Product prod);
 		void updateProd(Product prod);
-		void deleteProd(String ref);
+		void deleteProd(Long id);
 
 }
