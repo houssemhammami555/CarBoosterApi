@@ -17,7 +17,7 @@ public class CarBoosterApiApplication {
 	 ConfigurableApplicationContext ctx	=SpringApplication.run(CarBoosterApiApplication.class, args);
 	CarRepository prodRep =  ctx.getBean(CarRepository.class) ;
 	
-	 prodRep.save(new Car("212TN456",10825684,false,0,"BMW","problem de volant"));
+	
 	}
 
 }

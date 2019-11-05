@@ -3,11 +3,12 @@ package com.example.demo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Car;
 import com.example.demo.repository.CarRepository;
-import com.example.demo.repository.ProductRepository;
 
+@Service
 public class CarService implements ICarService {
 	
 	@Autowired
@@ -20,19 +21,19 @@ public class CarService implements ICarService {
 	}
 
 	@Override
-	public void addProd(Car car) {
+	public void addCar(Car car) {
 		carRep.save(car);
 		
 	}
 
 	@Override
-	public void updateProd(Car car) {
+	public void updateCar(Car car) {
 		carRep.save(car);
 		
 	}
 
 	@Override
-	public void deleteProd(Long id) {
+	public void deleteCar(Long id) {
 		Car car = new Car();
 		car.setId(id);
 		carRep.delete(car);

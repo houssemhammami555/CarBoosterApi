@@ -6,9 +6,9 @@ import com.example.demo.entity.Car;
 
 public interface ICarService {
 	List<Car> getCars();
-	void addProd(Car prod);
-	void updateProd(Car prod);
-	void deleteProd(Long id);
+	void addCar(Car car);
+	void updateCar(Car car);
+	void deleteCar(Long id);
 
 
 }
