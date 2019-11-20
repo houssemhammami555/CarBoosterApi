@@ -14,6 +14,9 @@ public class Car {
 		private String mat;
 		private int userCin;
 		private boolean state;
+		private float price;
+		private String model;
+		private String details;
 		public Car(String mat, int userCin, boolean state, float price, String model, String details) {
 			super();
 			this.mat = mat;
@@ -91,9 +94,7 @@ public class Car {
 		public void setDetails(String details) {
 			this.details = details;
 		}
-		private float price;
-		private String model;
-		private String details;
+		
 		
 
 

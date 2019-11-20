@@ -14,33 +14,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Product;
-import com.example.demo.service.IProductService;
+import com.example.demo.service.ICrudService;
+
 
 @RestController
 @RequestMapping("/api/product")
 @CrossOrigin
 public class ProductController {
 	@Autowired
-	private IProductService prodService;
+	private ICrudService<Product, Long> prodService;
 	@GetMapping
-	public List<Product> getProducts(){
-		return prodService.getProducts();
+	public List<Product> getAll(){
+		return prodService.getAll();
 		
 	}
 	@PostMapping
-	public void addProd(@RequestBody Product prod) {
-		prodService.addProd(prod);
+	public void add(@RequestBody Product prod) {
+		prodService.add(prod);
 	}
 	
 	@PutMapping
-	public void updatePRod(@RequestBody Product prod) {
+	public void update(@RequestBody Product prod) {
 		System.out.print(prod.getPname());
-		prodService.updateProd(prod);
+		prodService.update(prod);
 	}
 	
 	@DeleteMapping("/{id}")
-	public void deleteProd(@PathVariable Long id) {
-		prodService.deleteProd(id);
+	public void delete(@PathVariable Long id) {
+		prodService.delete(id);
 	}
 
 }
