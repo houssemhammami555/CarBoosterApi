@@ -1,8 +1,6 @@
 package com.example.demo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 import javax.persistence.Id;
 
 @Entity
@@ -16,16 +14,25 @@ public class Product {
 		   private String descrip ;
 		   private int quantity ;
 			   private float price ;
-	   public Product() {
+			   @ManyToOne(fetch = FetchType.LAZY)
+			    @JoinColumn(name = "category_id", nullable = false)
+			    private Category category ;
+	   public Category getCategory() {
+				return category;
+			}
+			
+	public Product() {
 		super();
 	}
-	public Product(String ref, String pname, String descrip, int quantity, float price) {
+	public Product(String ref, String pname, String descrip, int quantity, float price,Category cat) {
 		super();
 		this.ref = ref;
 		this.pname = pname;
 		this.descrip = descrip;
 		this.quantity = quantity;
 		this.price = price;
+		this.category=cat;
+		System.out.print(this.category.getId());
 	}
 	
 	@Override
